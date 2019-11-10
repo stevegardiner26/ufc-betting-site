@@ -1,1 +1,15 @@
-<button class="btn btn-primary">Create a Betting Room</button>
+<div id="home" class="background-image">
+  <div class="action-container">
+    <div class="row">
+      <h2 class="title">UFC Betting</h2>
+    </div>
+    <div class="row">
+      <div class="col-md">
+        <%= button_to "Create a Betting Room", new_room_path, method: :post, class: "btn btn-danger" %>
+      </div>
+      <div class="col-md">
+        <%= button_to "Join a Betting Room", new_room_user_path, method: :post, class: "btn btn-danger" %>
+      </div>
+    </div>
+  </div>
+</div>
