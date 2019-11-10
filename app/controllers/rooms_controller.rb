@@ -1,9 +1,10 @@
 class RoomsController < ApplicationController
 
-  before_action :authenticate_user!, only: [:show]
+  before_filter :authenticate_user!
 
   def index
-    @rooms = @current_user.rooms
+    @title = "Hello"
+    @rooms = Room.all
   end
 
   def show
