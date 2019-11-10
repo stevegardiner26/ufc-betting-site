@@ -20,39 +20,5 @@
 }
 
 .profile-link {
-    color: #FF5252;
-}
-
-/* Main Color Pallette */
-
-.bg-primary-dark {
-    background: #455A64;
-}
-
-.bg-primary-light {
-    background: #CFD8DC;
-}
-
-.bg-primary {
-    background: #607D8B;
-}
-
-.bg-white {
-    background: #FFFFFF;
-}
-
-.bg-divider {
-    background: #BDBDBD;
-}
-
-.text-secondary {
-    background: #757575;
-}
-
-.text-primary {
-    background: #212121;
-}
-
-.bg-accent {
-    background: #FF5252;
+    color: white;
 }

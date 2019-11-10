@@ -1,0 +1,41 @@
+$bg-primary-dark: #455A64;
+$bg-primary-light: #CFD8DC;
+$bg-primary: #607D8B;
+$bg-white: #FFFFFF;
+$divider-color: #BDBDBD;
+$text-secondary: #757575;
+$text-primary: #212121;
+$accent-color: #FF5252;
+
+/* Main Color Pallette */
+.bg-primary-dark {
+  background: $bg-primary-dark;
+}
+
+.bg-primary-light {
+  background: $bg-primary-light;
+}
+
+.bg-primary {
+  background: $bg-primary;
+}
+
+.bg-white {
+  background: $bg-white;
+}
+
+.bg-divider {
+  background: $divider-color;
+}
+
+.text-secondary {
+  background: $text-secondary;
+}
+
+.text-primary {
+  background: $text-primary;
+}
+
+.bg-accent {
+  background: $accent-color;
+}
