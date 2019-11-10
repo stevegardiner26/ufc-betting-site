@@ -4,5 +4,6 @@ class HomeController < ApplicationController
   # layout 'clean', :only => [:login]
 
   def index
+    
   end
 end
