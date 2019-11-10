@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+.dropdown:hover .dropdown-toggle, .dropdown:focus .dropdown-toggle, .dropdown:active .dropdown-toggle {
+    color: white;
+}
