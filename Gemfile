@@ -13,6 +13,7 @@ gem 'mysql2'
 
 # Bootstrap for styles
 gem 'bootstrap'
+gem "bootstrap_form", "~> 4.0"
 
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
