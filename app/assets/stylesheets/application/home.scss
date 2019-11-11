@@ -22,6 +22,16 @@
   }
 }
 
+.form-container {
+  background: $bg-primary-light;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 2px 2px 2px rgba(0,0,0,.4);
+  width: 50%;
+  margin: 100px auto;
+  height: auto;
+}
+
 .background-image {
   top: 0;
   position: absolute;
