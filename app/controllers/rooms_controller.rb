@@ -9,7 +9,7 @@ class RoomsController < ApplicationController
   end
 
   def create
-    @room = @current_user.rooms.create! room_params
+    @room = @current_user.rooms.create(owner_id: @current_user.id, name: params[:room][:name], starting_balance: params[:room][:starting_balance])
     redirect_to @room
   end
 
