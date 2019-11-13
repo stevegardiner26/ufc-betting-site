@@ -9,10 +9,17 @@ class RoomsController < ApplicationController
   end
 
   def create
-
+    @room = @current_user.rooms.create! room_params
+    redirect_to @room
   end
 
   def show
 
+  end
+
+  private
+
+  def room_params
+    params.permit(:name, :starting_balance)
   end
 end
