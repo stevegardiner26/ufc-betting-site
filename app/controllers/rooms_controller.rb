@@ -1,5 +1,7 @@
 class RoomsController < ApplicationController
 
+  before_action :load_room, only: [:show]
+
   def index
     @rooms = @current_user.rooms
   end
@@ -21,5 +23,9 @@ class RoomsController < ApplicationController
 
   def room_params
     params.permit(:name, :starting_balance)
+  end
+
+  def load_room
+    @room = Room.find(params[:id])
   end
 end
