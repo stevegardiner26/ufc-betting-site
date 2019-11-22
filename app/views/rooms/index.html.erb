@@ -14,7 +14,7 @@
     <% @rooms.each do |room| %>
       <tr>
         <td><%= room.id %></td>
-        <td><%= room.name %></td>
+        <td><%= link_to room.name, room %></td>
         <td><%= room.users.count %></td>
         <td><%= room.owner.email %></td>
       </tr>
