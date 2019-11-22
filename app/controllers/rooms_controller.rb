@@ -1,6 +1,7 @@
 class RoomsController < ApplicationController
 
   before_action :load_room, only: [:show]
+  before_action :permission_check, only: :show
 
   def index
     @rooms = @current_user.rooms
@@ -23,6 +24,12 @@ class RoomsController < ApplicationController
 
   def room_params
     params.permit(:name, :starting_balance)
+  end
+
+  def permission_check
+    if not @room.users.include? @current_user
+      redirect_to rooms_path
+    end
   end
 
   def load_room
