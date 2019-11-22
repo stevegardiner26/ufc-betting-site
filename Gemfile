@@ -17,6 +17,9 @@ gem "bootstrap_form", "~> 4.0"
 
 gem 'jquery-rails'
 
+# Redis
+gem 'redis'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
