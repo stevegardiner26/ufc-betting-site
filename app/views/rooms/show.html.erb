@@ -1,1 +1,28 @@
-<p><%= @room.name %></p>
+<div class="container">
+  <h1>
+    <%= @room.name %>
+  </h1>
+  <div class="row">
+    <div class="col">
+      <div class="chat">
+        <% @room_messages.each do |room_message| %>
+          <div class="chat-message">
+            <strong><%= room_message.user.username %></strong><small><%= room_message.created_at.strftime(" (%m/%d/%Y %l:%M%p)") %></small>
+            <br>
+            <p><%= room_message.message %></p>
+          </div>
+        <% end %>
+      </div>
+
+      <%= bootstrap_form_for @room_message, remote: true do |form| %>
+        <div class="input-group mb-3">
+          <%= form.text_field :message, as: :string, wrapper: false, label: false, input_html: {class: 'chat-input'} %>
+          <div class="input-group-append">
+            <%= form.submit "Send", class: 'btn btn-primary chat-input' %>
+          </div>
+        </div>
+        <%= form.hidden_field :room_id %>
+      <% end %>
+    </div>
+  </div>
+</div>
