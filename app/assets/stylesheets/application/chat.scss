@@ -16,3 +16,15 @@ $text-secondary: #757575;
 .chat-message  {
   margin: 10px;
 }
+
+.chat-status {
+  display: inline-block;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  background: grey;
+}
+
+.chat-user {
+  display: inline-block;
+}
