@@ -4,4 +4,6 @@ class RoomUser < ApplicationRecord
 
   validates :room, :presence => true
   validates :user, :presence => true, uniqueness: {scope: :room}
+
+  attr_accessor :room_code
 end
