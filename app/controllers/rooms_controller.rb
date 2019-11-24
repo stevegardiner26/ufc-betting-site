@@ -8,17 +8,12 @@ class RoomsController < ApplicationController
   end
 
   def new
-    @new_room = Room.new
+    @room = Room.new
   end
 
   def create
     @room = @current_user.rooms.create(owner_id: @current_user.id, name: params[:room][:name], starting_balance: params[:room][:starting_balance])
-    if @room.save
-      flash[:success] = "Room #{@room.name} was created successfully"
-      redirect_to @room
-    else
-      render :new
-    end
+    redirect_to @room
   end
 
   def show

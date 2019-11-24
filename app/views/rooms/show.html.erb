@@ -2,6 +2,7 @@
   <h1>
     <%= @room.name %>
   </h1>
+  <small>Invite Code (<%= @room.invite_code %>) [Send this to your friends to join this room]</small>
   <div class="row">
     <div class="col-md-10">
       <div class="chat" data-channel-subscribe="room" data-room-id="<%= @room.id %>">
