@@ -1,6 +1,6 @@
 class RoomChannel < ApplicationCable::Channel
   def subscribed
-    room = Room.find_by(params[:room_id])
+    room = Room.find(params[:room])
     stream_for room
 
     # or
