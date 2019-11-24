@@ -12,6 +12,9 @@ Rails.application.configure do
   # Show full error reports.
   config.consider_all_requests_local = true
 
+  config.action_cable.allowed_request_origins = [ 'http://localhost:3002', 'http://127.0.0.1:3002' ]
+  config.action_cable.url = 'ws://localhost:3002/cable'
+
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
   if Rails.root.join('tmp', 'caching-dev.txt').exist?

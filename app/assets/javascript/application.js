@@ -1,3 +1,4 @@
 //= require jquery3
 //= require room.js
-//= require channels/room_channel.js
+//= require jquery_ujs
+//= require helpers.js
