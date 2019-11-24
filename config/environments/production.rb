@@ -10,6 +10,11 @@ Rails.application.configure do
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
 
+  config.web_socket_server_url = "wss://ufc-betting.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['http://ufc-betting.herokuapp.com',
+                                                 /http:\/\/ufc-betting.herokuapp.com\/*/]
+
+
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
