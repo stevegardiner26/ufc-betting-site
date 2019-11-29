@@ -5,6 +5,8 @@ class Room < ApplicationRecord
   has_many :room_users, dependent: :destroy
   has_many :users, through: :room_users
   has_many :room_messages, dependent: :destroy, inverse_of: :room
+  has_many :betting_rounds, dependent: :destroy
+  has_many :bets, through: :betting_rounds, dependent: :destroy
 
   validates :invite_code, uniqueness: true
 
