@@ -12,6 +12,7 @@ class RoomsController < ApplicationController
   end
 
   def create
+    # TODO: This is disgusting fix this bullshit
     @room = @current_user.rooms.create(owner_id: @current_user.id, name: params[:room][:name], starting_balance: params[:room][:starting_balance])
     redirect_to @room
   end

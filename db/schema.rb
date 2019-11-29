@@ -10,7 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_22_192629) do
+ActiveRecord::Schema.define(version: 2019_11_29_234711) do
+
+  create_table "bets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.boolean "bet_left"
+    t.integer "amount"
+    t.integer "user_id"
+    t.integer "betting_round_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "betting_rounds", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "left_bet"
+    t.string "right_bet"
+    t.integer "max_bet"
+    t.integer "min_bet"
+    t.integer "pre_time"
+    t.boolean "locked"
+    t.boolean "auto_payout"
+    t.integer "post_time"
+    t.integer "room_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "room_messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "message"
