@@ -4,6 +4,21 @@
     <%= f.text_field :name, required: true %>
     <%= f.text_field :starting_balance, required: true %>
     <% if f.object.persisted? %>
+      <table class="table">
+        <tr>
+          <th>Name</th>
+          <th>Admin?</th>
+          <th>Toggle Admin</th>
+        </tr>
+        <% @room.users.each do |user| %>
+          <tr>
+            <td><%= user.username %></td>
+            <% # TODO: Figure out how to access the room_user object of the current room in a very easy and efficient way %>
+            <td><%= user.room_users.count %></td>
+            <td><%= link_to :Toggle %></td>
+          </tr>
+        <% end %>
+      </table>
       <%= f.submit :Update %>
     <% else %>
       <%= f.submit :Create %>
