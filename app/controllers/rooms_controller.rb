@@ -42,6 +42,7 @@ class RoomsController < ApplicationController
 
   def load_room
     @room = Room.find(params[:id])
+    @room_user = @current_user.room_users.find_by_room_id(params[:id])
   end
 
   def room_admin?
