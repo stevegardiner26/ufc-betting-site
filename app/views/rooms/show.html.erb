@@ -1,11 +1,21 @@
 <div class="container">
-  <h1>
-    <%= @room.name %>
-  </h1>
-  <small>Invite Code (<%= @room.invite_code %>) [Send this to your friends to join this room]</small>
+  <div class="row">
+    <div class="col-md">
+      <h1>
+        <%= @room.name %>
+      </h1>
+      <small>Invite Code (<%= @room.invite_code %>) [Send this to your friends to join this room]</small>
+    </div>
+    <div class="col-md">
+      <% if @room_user.admin? %>
+        <button class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">Create Betting Round</button>
+        <!-- TODO: Put invite code in line below -->
+        <!--<button class="btn btn-secondary float-right mr-2" disabled="disabled">qeai49uijakdofr4</button>-->
+      <% end %>
+    </div>
+  </div>
   <div class="row">
     <div class="col-md-6">
-
     </div>
     <div class="col-md-6">
       <div class="row">
@@ -52,3 +62,5 @@
     <p data-role="message-text"></p>
   </div>
 </div>
+
+<%= render partial: "rooms/new_betting_round" %>
