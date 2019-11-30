@@ -2,6 +2,7 @@ class RoomsController < ApplicationController
 
   before_action :load_room, only: [:show, :update, :edit]
   before_action :permission_check, only: :show
+  before_action :room_admin?, only: [:update, :edit]
 
   def index
     @rooms = @current_user.rooms
@@ -41,5 +42,11 @@ class RoomsController < ApplicationController
 
   def load_room
     @room = Room.find(params[:id])
+  end
+
+  def room_admin?
+    if @current_user.nil? || !@current_user.room_users.find_by_room_id(params[:id]).admin?
+      render json: { errors: 'unauthorized' }, status: :unauthorized
+    end
   end
 end
