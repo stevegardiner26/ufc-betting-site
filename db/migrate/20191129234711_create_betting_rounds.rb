@@ -1,5 +1,5 @@
 class CreateBettingRounds < ActiveRecord::Migration[6.0]
-  def change
+  def up
     create_table :betting_rounds do |t|
       t.string :left_bet
       t.string :right_bet
@@ -12,5 +12,9 @@ class CreateBettingRounds < ActiveRecord::Migration[6.0]
       t.integer :room_id
       t.timestamps
     end
+  end
+
+  def down
+    drop_table :betting_rounds
   end
 end
